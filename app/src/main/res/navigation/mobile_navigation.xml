@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_myMall">
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_home"-->
+<!--        android:name="com.example.myretailer.ui.home.HomeFragment"-->
+<!--        android:label="@string/menu_home"-->
+<!--        tools:layout="@layout/fragment_home2" />-->
+    <fragment
+        android:id="@+id/nav_myMall"
+        android:name="com.pemaseervi.myretailer.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_nav_myMall_to_nav_cart"
+            app:destination="@id/nav_cart"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_nav_myMall_to_searchActivity"
+            app:destination="@id/searchActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_nav_myMall_to_notificationActivity"
+            app:destination="@id/notificationActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_nav_myMall_to_registerActivity"
+            app:destination="@id/registerActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_nav_myMall_to_selectLangaugeFragment"
+            app:destination="@id/selectLangaugeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.pemaseervi.myretailer.OrderFragment"
+        android:label="@string/menu_order"
+        tools:layout="@layout/fragment_order"
+        />
+    <fragment
+        android:id="@+id/nav_cart"
+        android:name="com.pemaseervi.myretailer.MyCartFragment"
+        android:label="@string/my_cart"
+        tools:layout="@layout/fragment_my_cart"
+        />
+    <fragment
+        android:id="@+id/nav_wishlist"
+        android:name="com.pemaseervi.myretailer.MyWishlistFragment"
+        android:label="@string/menu_wishlist"
+        tools:layout="@layout/fragment_my_wishlist"
+        />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.pemaseervi.myretailer.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/share_fragment"/>
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.pemaseervi.myretailer.MyAccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_my_account"
+        />
+    <activity
+        android:id="@+id/searchActivity"
+        android:name="com.pemaseervi.myretailer.SearchActivity"
+        android:label="@string/search"
+        tools:layout="@layout/activity_search" />
+    <activity
+        android:id="@+id/notificationActivity"
+        android:name="com.pemaseervi.myretailer.NotificationActivity"
+        android:label="@string/notifications_heading"
+        tools:layout="@layout/activity_notification" />
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="com.pemaseervi.myretailer.RegisterActivity"
+        android:label="@string/activity_register"
+        tools:layout="@layout/activity_register" />
+    <fragment
+        android:id="@+id/selectLangaugeFragment"
+        android:name="com.pemaseervi.myretailer.SelectLangaugeFragment"
+        android:label="@string/select_language"
+        tools:layout="@layout/fragment_select_langauge" />
+
+
+</navigation>

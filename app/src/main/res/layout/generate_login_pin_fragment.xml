@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".GenerateLoginPinFragment">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <ImageButton
+           android:id="@+id/generate_login_pin_close"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@android:color/transparent"
+           android:padding="4dp"
+
+
+           android:src="@mipmap/close"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <ImageView
+           android:id="@+id/imageView"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="32dp"
+           android:src="@mipmap/namaste"
+           android:tint="@color/colorPrimary"
+           android:padding="25dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+
+           <androidx.appcompat.widget.AppCompatTextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="40dp"
+               android:background="@android:color/transparent"
+               android:gravity="center"
+               android:text="@string/pin_msg"
+               android:textSize="20sp" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="30dp"
+               android:layout_marginBottom="10dp"
+               android:gravity="center"
+               android:orientation="horizontal">
+
+               <androidx.appcompat.widget.AppCompatEditText
+                   android:id="@+id/pinDigit1"
+                   style="@style/etDigits"
+                   android:nextFocusDown="@+id/pinDigit2" />
+
+               <androidx.appcompat.widget.AppCompatEditText
+                   android:id="@+id/pinDigit2"
+                   style="@style/etDigits"
+                   android:nextFocusDown="@+id/pinDigit3" />
+
+               <androidx.appcompat.widget.AppCompatEditText
+                   android:id="@+id/pinDigit3"
+                   style="@style/etDigits"
+                   android:nextFocusDown="@+id/pinDigit4" />
+
+               <androidx.appcompat.widget.AppCompatEditText
+                   android:id="@+id/pinDigit4"
+                   style="@style/etDigits"
+                   />
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/llContinue"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:background="@drawable/rounded_corner_red_rectangle"
+               android:gravity="center">
+
+               <androidx.appcompat.widget.AppCompatButton
+                   android:id="@+id/btnContinue"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:background="@android:color/transparent"
+                   android:gravity="center_horizontal"
+                   android:paddingLeft="6dp"
+                   android:paddingTop="8dp"
+                   android:paddingRight="6dp"
+                   android:paddingBottom="6dp"
+                   android:text="@string/_continue"
+                   android:textAllCaps="false"
+                   android:textColor="@color/colorAccent"
+                   android:textSize="20sp" />
+
+               <ProgressBar
+                   android:id="@+id/pbVerify"
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:theme="@style/AppTheme.WhiteAccent"
+                   android:visibility="gone" />
+           </LinearLayout>
+       </LinearLayout>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

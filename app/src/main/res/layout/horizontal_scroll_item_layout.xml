@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hsl_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:layout_margin="4dp"
+
+    android:background="@drawable/slider_background"
+    android:elevation="3dp">
+
+    <ImageView
+        android:id="@+id/horizontal_scroll_product_image"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/slider_background"
+        android:padding="0dp"
+
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/hs_add_to_wishlist_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/category_placeholder" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/hs_add_to_wishlist_btn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:tint="#9e9e9e"
+        android:background="@null"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        app:borderWidth="0dp"
+        app:pressedTranslationZ="0dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/my_wishlist" />
+    <TextView
+        android:id="@+id/horizontal_scroll_product_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/product_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll_product_image" />
+
+
+    <TextView
+        android:id="@+id/horizontal_scroll_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="Rs.599"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll_product_title" />
+
+    <LinearLayout
+        android:id="@+id/increment_decrement_product_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/add_remove_background"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/add_to_cart_category_btn"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/add"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/decrement_product_quantity"
+            android:layout_width="26dp"
+            android:layout_height="22dp"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/remove" />
+
+        <TextView
+            android:id="@+id/ordered_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="1"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/increment_product_quantity"
+            android:layout_width="26dp"
+            android:layout_height="22dp"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corner_white_rectangle_border_grey"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/add" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hsl_cutted_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Rs.5999"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/horizontal_scroll_price"
+        app:layout_constraintStart_toEndOf="@+id/horizontal_scroll_price" />
+
+    <TextView
+        android:id="@+id/hsl_discount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/discount"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/horizontal_scroll_price"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll_price" />
+
+    <View
+        android:id="@+id/divider26"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/hsl_cutted_price"
+        app:layout_constraintEnd_toEndOf="@+id/hsl_cutted_price"
+        app:layout_constraintStart_toStartOf="@+id/hsl_cutted_price"
+        app:layout_constraintTop_toTopOf="@+id/hsl_cutted_price" />
+</androidx.constraintlayout.widget.ConstraintLayout>
